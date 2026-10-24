@@ -1,0 +1,1 @@
+document.addEventListener(`click`,async e=>{let t=e.target.closest(`button[data-copy]`);if(!t)return;let n=t.querySelector(`span`)??t,r=n.textContent;try{await navigator.clipboard.writeText(t.dataset.copy),n.textContent=`Copied`}catch{n.textContent=`Couldn't copy`}setTimeout(()=>n.textContent=r,1600)});
